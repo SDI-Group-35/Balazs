@@ -40,7 +40,7 @@ protected:
 private:
     //storing coorindates
     QVector<QPointF> xyPress;
-
+};
 
 /* Linked List */
 class coordList{
@@ -62,9 +62,5 @@ public: /* This is where to functions goes to access private data */
     void PrintList();               /*  */
 };
 
-
-
-
-};
 
 #endif // PIXELMAP_H
