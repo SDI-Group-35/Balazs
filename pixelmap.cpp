@@ -1,5 +1,7 @@
 #include "pixelmap.h"
 #include "mainwindow.h"
+#include <iostream>
+using namespace std;
 
 pixelmap::pixelmap(QObject *parent)
 {
@@ -63,4 +65,35 @@ void pixelmap::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event){
 
         clearVectors();
     }
+}
+
+/* List releated */
+/* Initialize all of them to NULL */
+coordList::coordList(){
+    head = NULL;
+    curr = NULL;
+    temp = NULL;
+}
+/* Define addNode function */
+void coordList::addNode(int addData){
+    nodePtr n = new node;   /* Node pointer n point to a newly created node*/
+    n->next = NULL;         /* Finding the node n is poiting to and setting its pointer to NULL */
+    n->data = addData;
+
+    if(head != NULL){                   /* This part requires at least 1 element alreay in the node */
+        curr = head;
+        while(curr->next != NULL){      /* While the current node is not poitning to NULL, point to the next node */
+            curr = curr->next;          /* If current is NULL, exit out of while loop */
+        }
+        curr->next = n;                 /* After pointing to the last node, process restarts*/
+    }
+    else
+    {
+        head = n;
+    }
+}
+
+/* Initialize deleteNode function */
+void coordList::deleteNode(int delData){
+
 }
