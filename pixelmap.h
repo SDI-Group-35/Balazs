@@ -59,7 +59,7 @@ public: /* This is where to functions goes to access private data */
     coordList();
     void addNode(int addData);      /* Add a node and place a certain value in it */
     void deleteNode(int delData);   /* Whatever value is passed in here, will be searched through the list and removed */
-    void PrintList();               /*  */
+    void printList();               /*  */
 };
 
 
