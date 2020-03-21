@@ -68,6 +68,7 @@ void pixelmap::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event){
 }
 
 /* List releated */
+
 /* Initialize all of them to NULL */
 coordList::coordList(){
     head = NULL;
@@ -101,7 +102,7 @@ void coordList::deleteNode(int delData){
    while (curr != NULL && curr->data != delData)    /* if we went throught the list and did not find the data to be deleted, we need to exit the loop */
    {                                                /* also we need to make sure the data is not the data we need to delete, otherwise exit the loop */
      temp = curr;                                   /* temp is 1 step behinde curr*/
-     curr == curr->next;                            /* curr one step ahead of temp, since it points to next node in list */
+     curr = curr->next;                            /* curr one step ahead of temp, since it points to next node in list */
                                                     /* when the while loop exit one of the 2 conditions failed, either no data found or data found to be deleted */
    }
    if(curr == NULL)                                 /* If it is equal to NULL we did not find the data to be deleted */
@@ -117,4 +118,13 @@ void coordList::deleteNode(int delData){
        delete delPtr;                               /* delete whatever is delPtr is pointing to */
        cout <<" The deleted data was "<< delData<< " and got deleted\n";
    }
+}
+
+/* print out the values placed in the list for testing, as long as it is not equal to NULL */
+void coordList::printList(){
+    curr = head;
+    while(curr != NULL){
+       cout<< curr->data << endl;
+       curr = curr->next;
+    }
 }
